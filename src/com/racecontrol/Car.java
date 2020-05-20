@@ -1,6 +1,6 @@
 package com.racecontrol;
 
-public class Car {
+public class Car{
 
 	private String brand;
 	private String model;
@@ -75,7 +75,5 @@ public class Car {
 	public void totalPoints(int points) {
 		this.points += points;
 	}
-	
-
-	
+    
 }
