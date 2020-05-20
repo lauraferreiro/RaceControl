@@ -18,6 +18,9 @@ public class Race {
 		this.type = type;
 		this.setLaps(laps);
 	}
+	
+	public Race() {
+	}
 
 	public String getName() {
 		return name;
@@ -64,5 +67,6 @@ public class Race {
 		}
 		
 	}
+
 
 }

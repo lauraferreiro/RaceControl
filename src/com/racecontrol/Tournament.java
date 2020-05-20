@@ -5,12 +5,12 @@ import java.util.List;
 public class Tournament {
 
 	private String tournamentName;
-	private List<Parking> parkings;
 	private List<Race> races;
+	//private List<Parking> parkings;
+
 	
-	public Tournament(String tournamentName, List<Parking> parkings, List<Race> races) {
+	public Tournament(String tournamentName, List<Race> races) {
 		this.tournamentName = tournamentName;
-		this.parkings = parkings;
 		this.races = races;
 	}
 
@@ -22,14 +22,6 @@ public class Tournament {
 		this.tournamentName = tournamentName;
 	}
 
-	public List<Parking> getParkings() {
-		return parkings;
-	}
-
-	public void setParkings(List<Parking> parkings) {
-		this.parkings = parkings;
-	}
-
 	public List<Race> getRaces() {
 		return races;
 	}
@@ -37,12 +29,6 @@ public class Tournament {
 	public void setRaces(List<Race> races) {
 		this.races = races;
 	}
-	
-	public void celebrar() {
-		
-		for(int i=0;i<races.size();i++) {
-			races.get(i).celebrarCarrera();
-		}
-	}
+
 	
 }

@@ -12,19 +12,20 @@ public class Main {
 		
 		while (option != 0) {
 			System.out.println("Selecciona una opción: " + "\n" + "0. Salir" + "\n"
-					+ "1. Celebrar un torneo" + "\n"
-					+ "2. Ver resultados anteriores");
+					+ "1. Celebrar una carrera" + "\n"
+					+ "2. Celebrar torneo");
 
 			option = in.nextInt();
 			
 			if(option==1){
 				
-					racecontrol.iniciar();
+				racecontrol.iniciar();
 			}
 			
 			if(option==2) {
 				
-				//ver resultados viejos
+				racecontrol.celebrar();
+				
 			}
 		}
 		in.close();

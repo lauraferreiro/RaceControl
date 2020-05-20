@@ -9,9 +9,10 @@ public class RaceControl {
 	private List<Car> cars;
 	private List<Race> races;
 	int point = 10;
+
 	// private List<Parking> parkings;
 
-	public RaceControl () {
+	public RaceControl() {
 
 		cars = new ArrayList<Car>();
 		cars.add(new Car("Ferrari", "F8 Spider"));
@@ -35,7 +36,7 @@ public class RaceControl {
 		cars.add(new Car("Mazda", "Laputa"));
 		cars.add(new Car("Mitsubishi", "Pajero"));
 		cars.add(new Car("Kia", "Borrego"));
-        
+
 		races = new ArrayList<Race>();
 		races.add(new Race("Indianápolis", RaceType.STANDARD, 10));
 		races.add(new Race("Mónaco", RaceType.STANDARD, 20));
@@ -52,7 +53,7 @@ public class RaceControl {
 			races.get(i).setCars(cars);
 		}
 
-		/* Tournament marioKart = new Tournament("Mario Kart", parkings, races); */
+		Tournament marioKart = new Tournament("Mario Kart", races);
 
 		/*
 		 * parkings = new ArrayList<Parking>(); parkings.add(new Parking("Red Bull"));
@@ -60,51 +61,64 @@ public class RaceControl {
 		 * parkings.add(new Parking("Desatranques Jaén")); parkings.add(new
 		 * Parking("Benetton")); parkings.add(new Parking("Toro Rosso"));
 		 */
-		
-
-		/* PARA TORNEOS
-		 for (Race e : races) {
-			e.realizarVueltas();
-
-		}*/
 
 	}
-	
-	public void iniciar(){
-		
+
+	public void iniciar() {
+
 		races.get(2).realizarVueltas();
 
-		Collections.sort(cars,new Compare());
-        
-    	for(int x = 0; x < 3 ; x++) {
-    		cars.get(x).setPoints(point);
-    		point -= 3;
-    	}
-    	
-        for(Car a: cars){
-        	
-        	System.out.println((a.getBrand()) + " " +
-        (a.getModel()) + " ha recorrido " + (a.getDistance()) + " km y ha obtenido "
-            		+ (a.getPoints()) + " puntos.");
-        }
+		Collections.sort(cars, new Compare());
+
+		for (int x = 0; x < 3; x++) {
+			cars.get(x).setPoints(point);
+			point -= 3;
+		}
+
+		for (Car a : cars) {
+			System.out.println((a.getBrand()) + " " + (a.getModel()) + " ha recorrido " + (a.getDistance())
+					+ " km y ha obtenido " + (a.getPoints()) + " puntos.");
+		}
 
 	}
 
-	public class Compare implements Comparator<Car>{
-	     
-	     @Override
-	     public int compare(Car e1, Car e2){
-	        if(e1.getDistance()>e2.getDistance()){
-	            return -1;
-	        }else if(e1.getDistance()>e2.getDistance()){
-	            return 0;
-	        }else{
-	            return 1;
-	        }
-	        
-	    }
-	     
-	     
+	public class Compare implements Comparator<Car> {
+
+		@Override
+		public int compare(Car e1, Car e2) {
+			if (e1.getDistance() > e2.getDistance()) {
+				return -1;
+			} else if (e1.getDistance() > e2.getDistance()) {
+				return 0;
+			} else {
+				return 1;
+			}
+
+		}
+
+	}
+
+	public void celebrar() {
+		
+		for (Race e : races) {
+			e.realizarVueltas();
+			
+			System.out.println("Carrera " + (e.getName()));
+			
+			Collections.sort(cars, new Compare());
+			
+			/*for (int x = 0; x < 3; x++) {
+				cars.get(x).setPoints(point);
+				point -= 3;*/
+			}
+
+			for (Car a : cars) {
+				System.out.println((a.getBrand()) + " " + (a.getModel()) + " ha recorrido " + (a.getDistance())
+						+ " km y ha obtenido " + (a.getPoints()) + " puntos.");
+			}
+				
+		}
+
 	}
 
 }
