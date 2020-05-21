@@ -55,7 +55,7 @@ public class Race {
 	}
 	
 	public void realizarVueltas() {
-
+		
 		for (int i = 0; i < laps; i++) {
 
 			for (Car c : getCars()) {

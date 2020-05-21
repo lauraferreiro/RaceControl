@@ -68,6 +68,18 @@ public class Car{
 		}
 	}
 	
+	public void resetAll () {
+		speed=0;
+		distance=0;
+		points=0;
+	}
+	
+	public void reset () {
+		speed=0;
+		distance=0;
+	}
+
+	
 	public void avanzar() {
 		distance += speed;
 	}
@@ -75,5 +87,5 @@ public class Car{
 	public void totalPoints(int points) {
 		this.points += points;
 	}
-    
+
 }
